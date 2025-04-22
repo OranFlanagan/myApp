@@ -26,4 +26,9 @@ export class HomePage {
   {
     await Browser.open({url: 'https://www.oneills.com/shop-by-team/gaa/ireland/aughawillan-gaa.html'});
   };
+
+  async openFixtures()
+  {
+    await Browser.open({url: 'https://www.leitrimgaa.ie/fixtures-next-10-days/'})
+  }
 }

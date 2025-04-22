@@ -21,14 +21,16 @@
   <ul>
     <ion-button style="text-align: center; border: 5px solid; padding: 35px;" expand="block" [routerLink]="['/intro']">Thank you for downloading our app!</ion-button>
     <ion-button style="text-align: center; border: 5px solid; padding: 35px;" expand="block" (click)="openBrowser()">Your Add here!</ion-button>
-    <ion-button style="text-align: center; border: 5px solid; padding: 35px;" expand="block" (click)="openClubNotes()">Here are the club notes</ion-button>
+    <ion-button style="text-align: center; border: 5px solid; padding: 30px;" expand="block" (click)="openFixtures()">Click here for the fixtures in Leitrim for the next 10 days</ion-button>
   </ul> 
   <ion-footer>
     <ion-toolbar>
       <div style="display: flex; align-items: center;">
-        <img src="assets/icon/Home_Button.jpg" style="width: 15%; height: 15%; padding: 2%; margin-right: 20px;" [routerLink]="['/intro']">
-        <img src="assets/icon/oneillsLogo.jpg" style="width: 15%; height: 15%; padding: 2%; margin-right: 20px;" (click)="openOneills()">
-        <img src="assets/icon/ticketStub.jpg"  style="width: 15%; height: 15%; border: 2px solid; margin-right: 20px;" [routerLink]="['/fundrasier']">
+        <img src="assets/icon/Home_Button.jpg" style="width: 15%; height: 15%; padding: 2%; margin-right: auto;" [routerLink]="['/intro']">
+        <img src="assets/icon/loginButton.jpg"  style="width: 10%; height: 10%; margin-right: auto;" [routerLink]="['/login']">
+        <img src="assets/icon/ticketStub.jpg"  style="width: 15%; height: 15%; border: 2px solid; margin-right: auto;" [routerLink]="['/fundraiser']">
+        <img src="assets/icon/notePad.jpg"  style="width: 10%; height: 10%; margin-right: auto;"(click)="openClubNotes()">
+        <img src="assets/icon/settings.jpg"  style="width: 10%; height: 10%; margin-right: auto;" [routerLink]="['/login']">
       </div>
     </ion-toolbar>
   </ion-footer>
