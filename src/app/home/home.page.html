@@ -19,17 +19,17 @@
   </ion-header>
 
   <ul>
-    <ion-button style="text-align: center; border: 5px solid; padding: 20px;"expand="block" [routerLink]="['/intro']">Thank you for downloading our app!</ion-button>
-    <ion-button style="text-align: center; border: 5px solid; padding: 20px;" expand="block" (click)="openBrowser()">Your Add here!</ion-button>
-    <ion-button style="text-align: center; border: 5px solid; padding: 20px;"expand="block" [routerLink]="['/clubnotes']">Here are the club notes</ion-button>
+    <ion-button style="text-align: center; border: 5px solid; padding: 35px;" expand="block" [routerLink]="['/intro']">Thank you for downloading our app!</ion-button>
+    <ion-button style="text-align: center; border: 5px solid; padding: 35px;" expand="block" (click)="openBrowser()">Your Add here!</ion-button>
+    <ion-button style="text-align: center; border: 5px solid; padding: 35px;" expand="block" (click)="openClubNotes()">Here are the club notes</ion-button>
   </ul> 
   <ion-footer>
     <ion-toolbar>
-              <ion-button style="text-align: center; border: 5px solid; padding: 10px;"></ion-button>
-              <ion-button style="text-align: center; border: 5px solid; padding: 10px;"></ion-button>
-              <ion-button style="text-align: center; border: 5px solid; padding: 10px;"></ion-button>
-              <ion-button style="text-align: center; border: 5px solid; padding: 10px;"></ion-button>
-              <ion-button style="text-align: center; border: 5px solid; padding: 10px;"></ion-button>
+      <div style="display: flex; align-items: center;">
+        <img src="assets/icon/Home_Button.jpg" style="width: 15%; height: 15%; padding: 2%; margin-right: 20px;" [routerLink]="['/intro']">
+        <img src="assets/icon/oneillsLogo.jpg" style="width: 15%; height: 15%; padding: 2%; margin-right: 20px;" (click)="openOneills()">
+        <img src="assets/icon/ticketStub.jpg"  style="width: 15%; height: 15%; border: 2px solid; margin-right: 20px;" [routerLink]="['/fundrasier']">
+      </div>
     </ion-toolbar>
   </ion-footer>
 </ion-content>  

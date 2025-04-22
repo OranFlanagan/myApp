@@ -11,8 +11,19 @@ import { RouterLink } from '@angular/router';
 })
 export class HomePage {
   constructor() {}
+
   async openBrowser()
   {
     await Browser.open({ url: 'https://www.facebook.com/aughawillangaa/'});
+  };
+
+  async openClubNotes()
+  {
+    await Browser.open({url: 'https://aughawillangaa.wordpress.com/tag/gaa/'});
+  };
+  
+  async openOneills()
+  {
+    await Browser.open({url: 'https://www.oneills.com/shop-by-team/gaa/ireland/aughawillan-gaa.html'});
   };
 }
