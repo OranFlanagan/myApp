@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+      <ion-title>settings</ion-title>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edit Your Password</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Display name as static text -->
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-text>{{ name }}</ion-text>
+  </ion-item>
+
+  <!-- Display email as static text -->
+  <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-text>{{ email }}</ion-text>
+  </ion-item>
+
+  <!-- Only the password is editable -->
+  <ion-item>
+    <ion-label position="stacked">New Password</ion-label>
+    <ion-input
+      type="password"
+      [value]="password"
+      (ionInput)="password = $event.detail.value!">
+    </ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="savePassword()">
+    Save Password
+  </ion-button>
+</ion-content>
+

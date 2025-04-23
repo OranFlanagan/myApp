@@ -26,11 +26,11 @@
   <ion-footer>
     <ion-toolbar>
       <div style="display: flex; align-items: center;">
-        <img src="assets/icon/Home_Button.jpg" style="width: 15%; height: 15%; padding: 2%; margin-right: auto;" [routerLink]="['/intro']">
+        <img src="assets/icon/Home_Button.jpg" style="width: 15%; height: 15%; padding: 2%; margin-right: auto;" [routerLink]="['/home']">
         <img src="assets/icon/loginButton.jpg"  style="width: 10%; height: 10%; margin-right: auto;" [routerLink]="['/login']">
-        <img src="assets/icon/ticketStub.jpg"  style="width: 15%; height: 15%; border: 2px solid; margin-right: auto;" [routerLink]="['/fundraiser']">
+        <img src="assets/icon/ticketStub.jpg"  style="width: 15%; height: 15%; border: 2px solid; margin-right: auto;" (click)="tickets()">
         <img src="assets/icon/notePad.jpg"  style="width: 10%; height: 10%; margin-right: auto;"(click)="openClubNotes()">
-        <img src="assets/icon/settings.jpg"  style="width: 10%; height: 10%; margin-right: auto;" [routerLink]="['/login']">
+        <img src="assets/icon/settings.jpg"  style="width: 10%; height: 10%; margin-right: auto;" [routerLink]="['/settings']">
       </div>
     </ion-toolbar>
   </ion-footer>

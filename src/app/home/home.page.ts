@@ -31,4 +31,9 @@ export class HomePage {
   {
     await Browser.open({url: 'https://www.leitrimgaa.ie/fixtures-next-10-days/'})
   }
+
+  async tickets()
+  {
+    await Browser.open({url: 'https://www.universe.com/users/leitrim-gaa-J10NQ5'})
+  }
 }

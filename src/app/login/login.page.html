@@ -1,30 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons>
-      <ion-back-button></ion-back-button>
-      <ion-title>Login</ion-title>
-      </ion-buttons>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content class="ion-padding">
-  <form (ngSubmit)="onSubmit()" >
-    <ion-item>
-      <ion-label position="floating">Full Name</ion-label>
-      <ion-input formControlName="name" type="text" required></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Name</ion-label>
+    <!-- [value] + (ionInput) binding avoids the need for ngModel -->
+    <ion-input
+      [value]="name"
+      (ionInput)="name = $event.detail.value!">
+    </ion-input>
+  </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input formControlName="email" type="email" required></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Email</ion-label>
+    <ion-input
+      type="email"
+      [value]="email"
+      (ionInput)="email = $event.detail.value!">
+    </ion-input>
+  </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input formControlName="password" type="password" required></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Password</ion-label>
+    <ion-input
+      type="password"
+      [value]="password"
+      (ionInput)="password = $event.detail.value!">
+    </ion-input>
+  </ion-item>
 
-    <ion-button expand="full" type="submit" [disabled]="!loginForm.valid">
-      Create Account
-    </ion-button>
-  </form>
+  <ion-button expand="block" (click)="goToHome()">
+    Continue
+  </ion-button>
 </ion-content>
