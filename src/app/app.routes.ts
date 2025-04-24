@@ -26,4 +26,16 @@ export const routes: Routes = [
     path: 'loading-page',
     loadComponent: () => import('./loading-page/loading-page.page').then( m => m.LoadingPagePage)
   },
+  {
+    path: 'change-name',
+    loadComponent: () => import('./change-name/change-name.page').then( m => m.ChangeNamePage)
+  },
+  {
+    path: 'support',
+    loadComponent: () => import('./support/support.page').then( m => m.SupportPage)
+  },
+  {
+    path: 'app-mode',
+    loadComponent: () => import('./app-mode/app-mode.page').then( m => m.AppModePage)
+  },
 ];

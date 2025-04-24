@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule} from '@ionic/angular';
-import { CommonModule }from'@angular/common';
-import { RouterLink}from '@angular/router';
-import { IonButton }from'@ionic/angular/standalone';
+import{CommonModule}from'@angular/common';
 
 @Component({
   selector: 'app-profile',
-  templateUrl: './settings.page.html',
-  styleUrls: ['./settings.page.scss'],
+  templateUrl: './change-name.page.html',
+  styleUrls: ['./change-name.page.scss'],
   standalone: true,
-  imports: [IonicModule, ReactiveFormsModule, CommonModule, RouterLink, IonButton],
+  imports: [IonicModule, ReactiveFormsModule, CommonModule],
 })
-export class SettingsPage {
+export class ChangeNamePage {
   profileForm = this.fb.group({
     name:    ['', [Validators.required, Validators.minLength(2)]],
     email:   ['', [Validators.required, Validators.email]],
