@@ -1,6 +1,10 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="custom-header">
+    <ion-buttons slot="start">
+    <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
     <ion-title>Welcome To The Aughawillan App</ion-title>
+    <ion-buttons slot="end"></ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -12,8 +16,8 @@
         <ion-input
           formControlName="name"
           type="text"
-          placeholder="Your full name"
-        ></ion-input>
+          placeholder="Your full name">
+        </ion-input>
       </ion-item>
 
       <ion-item>
@@ -21,8 +25,8 @@
         <ion-input
           formControlName="email"
           type="email"
-          placeholder="you@example.com"
-        ></ion-input>
+          placeholder="you@example.com">
+      </ion-input>
       </ion-item>
 
       <ion-item>
@@ -30,8 +34,8 @@
         <ion-input
           formControlName="password"
           type="password"
-          placeholder="••••••••"
-        ></ion-input>
+          placeholder="••••••••">
+      </ion-input>
       </ion-item>
     </ion-list>
 
@@ -40,8 +44,7 @@
       type="submit"
       [disabled]="loginForm.invalid"
       class="login-button"
-      [routerLink]="['/home']"
-    >
+      [routerLink]="['/home']">
       Log In
     </ion-button>
   </form>

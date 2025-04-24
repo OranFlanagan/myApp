@@ -1,16 +1,16 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="custom-header">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button defaultHref="/login"></ion-back-button>
     </ion-buttons>
     <ion-title>Update Profile</ion-title>
+    <ion-buttons slot="end"></ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="profile-content">
   <form [formGroup]="profileForm">
     <ion-list lines="inset">
-      <!-- Name -->
       <ion-item>
         <ion-label position="stacked">Name</ion-label>
         <ion-input formControlName="name" type="text"></ion-input>
@@ -23,7 +23,6 @@
         Update Name
       </ion-button>
 
-      <!-- Email -->
       <ion-item>
         <ion-label position="stacked">Email</ion-label>
         <ion-input formControlName="email" type="email"></ion-input>

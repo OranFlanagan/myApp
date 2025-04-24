@@ -34,8 +34,4 @@ export const routes: Routes = [
     path: 'support',
     loadComponent: () => import('./support/support.page').then( m => m.SupportPage)
   },
-  {
-    path: 'app-mode',
-    loadComponent: () => import('./app-mode/app-mode.page').then( m => m.AppModePage)
-  },
 ];

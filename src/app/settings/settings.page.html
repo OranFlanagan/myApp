@@ -1,11 +1,18 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Update Profile</ion-title>
+  <ion-toolbar class="custom-header">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+    <ion-title class="heading">Update Profile</ion-title>
+    <ion-buttons slot="end"></ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="custom-mainbody">
 <ion-grid class="ion-text-center ion-margin-vertical">
+  <ion-content class="ion-padding">
+    <h2>Hello, {{ name }}!</h2>
+  </ion-content>
   <ion-row>
     <ion-col size="12">
       <ion-button expand="block" 
@@ -26,11 +33,46 @@
     <ion-col size="12" class="ion-margin-top">
       <ion-button expand="block" 
                   style="padding: 20px; background-color: #007bff; color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);" 
-                  fill="clear"
-                  [routerLink]="['/app-mode']">
-        Click here for the fixtures in Leitrim for the next 10 days
+                  fill="clear">
+                      <ion-label>Dark Mode</ion-label>
+                      <ion-toggle 
+                        [checked]="isDark"
+                        (ionChange)="toggleDark($event)"></ion-toggle>
       </ion-button>
     </ion-col>
   </ion-row>
 </ion-grid>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+      <img src="assets/icon/Home_Button.jpg" 
+           alt="Home Button" 
+           title="Go to Home" 
+           style="width: 10%; height: auto; border-radius: auto;" 
+           [routerLink]="['/home']" fill="clear">
+      <img src="assets/icon/loginButton.jpg" 
+           alt="Login" 
+           title="Login" 
+           style="width: 10%; height: auto; border-radius: auto;" 
+           [routerLink]="['/login']">
+      
+      <img src="assets/icon/ticketStub.jpg" 
+            alt="Tickets" 
+            title="View Tickets" 
+            style="width: 15%; height: auto; border-radius: auto;" 
+            (click)="tickets()">
+      
+      <img src="assets/icon/notePad.jpg" 
+           alt="Club Notes" 
+           title="Open Club Notes" 
+           style="width: 10%; height: auto; border-radius: auto;" 
+           (click)="openClubNotes()">
+      <img src="assets/icon/settings.jpg" 
+           alt="Settings" 
+           title="Go to Settings" 
+           style="width: 10%; height: auto; border-radius: auto;" 
+           [routerLink]="['/settings']">
+    </div>
+  </ion-toolbar>
+</ion-footer>
