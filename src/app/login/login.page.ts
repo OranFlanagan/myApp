@@ -1,31 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { UserService } from '../services/user.service';
-import {IonContent, IonHeader, IonButton, IonToolbar, IonButtons, IonBackButton, IonLabel, IonItem, IonInput, IonTitle} from "@ionic/angular/standalone";
+import { Component } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { ReactiveFormsModule, FormBuilder, Validators, } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  imports: [IonContent, IonHeader, IonButton, IonToolbar, IonButtons, IonBackButton, IonLabel, IonItem, IonInput, IonTitle],
+  standalone: true,
+  imports: [IonicModule, ReactiveFormsModule, RouterLink]
 })
 export class LoginPage {
-  // simple properties — no FormsModule needed
-  name = '';
-  email = '';
-  password = '';
+  loginForm = this.fb.group({
+    name:    ['', [Validators.required, Validators.minLength(2)]],
+    email:   ['', [Validators.required, Validators.email]],
+    password:['', [Validators.required, Validators.minLength(6)]]
+  });
 
-  constructor(private router: Router) {}
+  constructor(private fb: FormBuilder) {}
 
-  goToHome() {
-    // pass the current values as query params
-    this.router.navigate(['/home'], {
-      queryParams: {
-        name: this.name,
-        email: this.email,
-        password: this.password,
-      },
-    });
+  onSubmit() {
+    if (this.loginForm.valid) {
+      const { name, email, password } = this.loginForm.value;
+      console.log('Logging in:', name, email);
+      // TODO: hook up to auth service...
+    } else {
+      this.loginForm.markAllAsTouched();
+    }
   }
 }

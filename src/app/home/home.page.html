@@ -15,12 +15,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large" class="ion-text-center">Welcome to the Aughawillan GAA app</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="custom-mainbody">
 
   <ion-grid class="ion-text-center ion-margin-vertical">
     <ion-row>
@@ -34,7 +29,7 @@
 
       <ion-col size="12" class="ion-margin-top">
         <ion-button expand="block" 
-                    style="padding: 20px; background-color: #00bcd4; color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);" 
+                    style="padding: 20px; background-color: #007bff; color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);" 
                     (click)="openBrowser()" fill="clear">
           Your Add here!
         </ion-button>
@@ -42,7 +37,7 @@
 
       <ion-col size="12" class="ion-margin-top">
         <ion-button expand="block" 
-                    style="padding: 20px; background-color: #4caf50; color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);" 
+                    style="padding: 20px; background-color: #007bff; color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);" 
                     (click)="openFixtures()" fill="clear">
           Click here for the fixtures in Leitrim for the next 10 days
         </ion-button>
@@ -57,7 +52,7 @@
              alt="Home Button" 
              title="Go to Home" 
              style="width: 10%; height: auto; border-radius: auto;" 
-             [routerLink]="['/home']">
+             [routerLink]="['/home']" fill="clear">
         <img src="assets/icon/loginButton.jpg" 
              alt="Login" 
              title="Login" 
@@ -67,7 +62,7 @@
         <img src="assets/icon/ticketStub.jpg" 
               alt="Tickets" 
               title="View Tickets" 
-              style="width: 15%; height: auto; border-radius: 5px; border: 3px solid black;" 
+              style="width: 15%; height: auto; border-radius: auto;" 
               (click)="tickets()">
         
         <img src="assets/icon/notePad.jpg" 

@@ -1,41 +1,48 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Login</ion-title>
+    <ion-title>Welcome Back</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-item>
-    <ion-label position="stacked">Name</ion-label>
-    <!-- [value] + (ionInput) binding avoids the need for ngModel -->
-    <ion-input
-      [value]="name"
-      (ionInput)="name = $event.detail.value!">
-    </ion-input>
-  </ion-item>
+<ion-content class="login-content">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <ion-list lines="full" class="login-list">
+      <ion-item>
+        <ion-label position="stacked">Name</ion-label>
+        <ion-input
+          formControlName="name"
+          type="text"
+          placeholder="Your full name"
+        ></ion-input>
+      </ion-item>
 
-  <ion-item>
-    <ion-label position="stacked">Email</ion-label>
-    <ion-input
-      type="email"
-      [value]="email"
-      (ionInput)="email = $event.detail.value!">
-    </ion-input>
-  </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input
+          formControlName="email"
+          type="email"
+          placeholder="you@example.com"
+        ></ion-input>
+      </ion-item>
 
-  <ion-item>
-    <ion-label position="stacked">Password</ion-label>
-    <ion-input
-      type="password"
-      [value]="password"
-      (ionInput)="password = $event.detail.value!">
-    </ion-input>
-  </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input
+          formControlName="password"
+          type="password"
+          placeholder="••••••••"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
 
-  <ion-button expand="block" (click)="goToHome()">
-    Continue
-  </ion-button>
+    <ion-button
+      expand="block"
+      type="submit"
+      [disabled]="loginForm.invalid"
+      class="login-button"
+      [routerLink]="['/home']"
+    >
+      Log In
+    </ion-button>
+  </form>
 </ion-content>

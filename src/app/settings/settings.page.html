@@ -1,37 +1,85 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons>
-      <ion-back-button></ion-back-button>
-      <ion-title>settings</ion-title>
-      </ion-buttons>
+    <ion-title>Update Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <!-- Display name as static text -->
-  <ion-item>
-    <ion-label>Name</ion-label>
-    <ion-text>{{ name }}</ion-text>
-  </ion-item>
+<ion-content class="profile-content">
+  <form [formGroup]="profileForm">
+    <ion-list lines="inset">
+      <!-- Name -->
+      <ion-item>
+        <ion-label position="stacked">Name</ion-label>
+        <ion-input formControlName="name" type="text"></ion-input>
+      </ion-item>
+      <ion-button
+        expand="block"
+        *ngIf="isChanged('name')"
+        (click)="updateField('name')"
+      >
+        Update Name
+      </ion-button>
 
-  <!-- Display email as static text -->
-  <ion-item>
-    <ion-label>Email</ion-label>
-    <ion-text>{{ email }}</ion-text>
-  </ion-item>
+      <!-- Email -->
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input formControlName="email" type="email"></ion-input>
+      </ion-item>
+      <ion-button
+        expand="block"
+        *ngIf="isChanged('email')"
+        (click)="updateField('email')"
+      >
+        Update Email
+      </ion-button>
 
-  <!-- Only the password is editable -->
-  <ion-item>
-    <ion-label position="stacked">New Password</ion-label>
-    <ion-input
-      type="password"
-      [value]="password"
-      (ionInput)="password = $event.detail.value!">
-    </ion-input>
-  </ion-item>
+      <!-- Password -->
+      <ion-item>
+        <ion-label position="stacked">New Password</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+      <ion-button
+        expand="block"
+        *ngIf="isChanged('password')"
+        (click)="updateField('password')"
+      >
+        Update Password
+      </ion-button>
 
-  <ion-button expand="block" (click)="savePassword()">
-    Save Password
-  </ion-button>
+      <!-- DOB -->
+      <ion-item>
+        <ion-label position="stacked">Date of Birth</ion-label>
+        <ion-datetime
+          presentation="date"
+          formControlName="dob"
+          placeholder="Select Date"
+        ></ion-datetime>
+      </ion-item>
+      <ion-button
+        expand="block"
+        *ngIf="isChanged('dob')"
+        (click)="updateField('dob')"
+      >
+        Update DOB
+      </ion-button>
+
+      <!-- Gender -->
+      <ion-item>
+        <ion-label position="stacked">Gender</ion-label>
+        <ion-select formControlName="gender" placeholder="Select">
+          <ion-select-option value="male">Male</ion-select-option>
+          <ion-select-option value="female">Female</ion-select-option>
+          <ion-select-option value="non-binary">Non-binary</ion-select-option>
+          <ion-select-option value="prefer-not-to-say">Prefer not to say</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button
+        expand="block"
+        *ngIf="isChanged('gender')"
+        (click)="updateField('gender')"
+      >
+        Update Gender
+      </ion-button>
+    </ion-list>
+  </form>
 </ion-content>
-
