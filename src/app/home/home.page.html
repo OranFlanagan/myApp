@@ -49,36 +49,37 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
-  <ion-footer>
-    <ion-toolbar style="background: #f8f9fa;">
+</ion-content>
+  <ion-footer class="footer-class">
+    <ion-toolbar>
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
         <img src="assets/icon/Home_Button.jpg" 
              alt="Home Button" 
              title="Go to Home" 
-             style="width: 20%; height: auto; padding: 1rem; border-radius: 5%; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);" 
+             style="width: 10%; height: auto; border-radius: auto;" 
              [routerLink]="['/home']">
         <img src="assets/icon/loginButton.jpg" 
              alt="Login" 
              title="Login" 
-             style="width: 15%; height: auto; padding: 1rem; border-radius: 50%; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);" 
+             style="width: 10%; height: auto; border-radius: auto;" 
              [routerLink]="['/login']">
+        
         <img src="assets/icon/ticketStub.jpg" 
-             alt="Tickets" 
-             title="View Tickets" 
-             style="width: 20%; height: auto; padding: 1rem; border-radius: 50%; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);" 
-             (click)="tickets()">
+              alt="Tickets" 
+              title="View Tickets" 
+              style="width: 15%; height: auto; border-radius: 5px; border: 3px solid black;" 
+              (click)="tickets()">
+        
         <img src="assets/icon/notePad.jpg" 
              alt="Club Notes" 
              title="Open Club Notes" 
-             style="width: 15%; height: auto; padding: 1rem; border-radius: 50%; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);" 
+             style="width: 10%; height: auto; border-radius: auto;" 
              (click)="openClubNotes()">
         <img src="assets/icon/settings.jpg" 
              alt="Settings" 
              title="Go to Settings" 
-             style="width: 15%; height: auto; padding: 1rem; border-radius: 50%; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);" 
+             style="width: 10%; height: auto; border-radius: auto;" 
              [routerLink]="['/settings']">
       </div>
     </ion-toolbar>
   </ion-footer>
-  </ion-content>
