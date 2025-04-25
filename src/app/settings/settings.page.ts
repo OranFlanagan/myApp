@@ -26,7 +26,7 @@ export class SettingsPage implements OnInit
   originalValues = this.profileForm.value;
   name: any;
 
-  constructor(private fb: FormBuilder, private storage: Storage) {}
+  constructor(private fb: FormBuilder) {}
   isChanged(field: string) 
   {
     return this.profileForm.get(field)?.value !== (this.originalValues as any)[field];
@@ -49,7 +49,6 @@ export class SettingsPage implements OnInit
 
   async ngOnInit() 
   {
-    this.name = await this.storage.get('userName') || 'Guest';
     const saved = localStorage.getItem('darkMode');
     if (saved !== null) {
       this.isDark = saved === 'true';

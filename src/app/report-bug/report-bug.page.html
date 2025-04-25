@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-header">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/support"></ion-back-button>
+    </ion-buttons>
+    <ion-title>report-bug</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="custom-mainbody">
+<div class="bug-report-container">
+  <div class="bug-report-card">
+    <h2>Report a Bug</h2>
+
+    <form (ngSubmit)="submitBugReport()" #bugForm="ngForm">
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required [(ngModel)]="bug.subject"/>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          rows="5"
+          required
+          [(ngModel)]="bug.description"
+        ></textarea>
+      </div>
+
+      <button type="submit" [disabled]="!bugForm.form.valid">Submit Bug</button>
+    </form>
+  </div>
+</div>
+</ion-content>

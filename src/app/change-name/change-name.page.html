@@ -15,11 +15,7 @@
         <ion-label position="stacked">Name</ion-label>
         <ion-input formControlName="name" type="text"></ion-input>
       </ion-item>
-      <ion-button
-        expand="block"
-        *ngIf="isChanged('name')"
-        (click)="updateField('name')"
-      >
+      <ion-button expand="block" *ngIf="isChanged('name')" (click)="updateField('name')">
         Update Name
       </ion-button>
 
@@ -27,28 +23,18 @@
         <ion-label position="stacked">Email</ion-label>
         <ion-input formControlName="email" type="email"></ion-input>
       </ion-item>
-      <ion-button
-        expand="block"
-        *ngIf="isChanged('email')"
-        (click)="updateField('email')"
-      >
+      <ion-button expand="block" *ngIf="isChanged('email')" (click)="updateField('email')">
         Update Email
       </ion-button>
 
-      <!-- Password -->
       <ion-item>
         <ion-label position="stacked">New Password</ion-label>
         <ion-input formControlName="password" type="password"></ion-input>
       </ion-item>
-      <ion-button
-        expand="block"
-        *ngIf="isChanged('password')"
-        (click)="updateField('password')"
-      >
+      <ion-button expand="block" *ngIf="isChanged('password')" (click)="updateField('password')">
         Update Password
       </ion-button>
 
-      <!-- DOB -->
       <ion-item>
         <ion-label position="stacked">Date of Birth</ion-label>
         <ion-datetime
@@ -65,7 +51,6 @@
         Update DOB
       </ion-button>
 
-      <!-- Gender -->
       <ion-item>
         <ion-label position="stacked">Gender</ion-label>
         <ion-select formControlName="gender" placeholder="Select">
@@ -75,11 +60,7 @@
           <ion-select-option value="prefer-not-to-say">Prefer not to say</ion-select-option>
         </ion-select>
       </ion-item>
-      <ion-button
-        expand="block"
-        *ngIf="isChanged('gender')"
-        (click)="updateField('gender')"
-      >
+      <ion-button expand="block" *ngIf="isChanged('gender')" (click)="updateField('gender')">
         Update Gender
       </ion-button>
     </ion-list>

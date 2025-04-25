@@ -7,21 +7,6 @@ export interface User {
   email: string;
 }
 
-/*@Injectable({ providedIn: 'root' }) export class UserService 
-{
-  private userSubject = new BehaviorSubject<User | null>(null);
-
-  setUser(user: User) 
-  {
-    this.userSubject.next(user);
-    // optionally persist to localStorage:
-    // localStorage.setItem('currentUser', JSON.stringify(user));
-  }
-
-  getUser(): Observable<User | null> {
-    return this.userSubject.asObservable();
-  }
-}*/
 @Injectable({ providedIn: 'root' })
 export class SomeService {
   constructor(private storage: Storage) {
@@ -29,7 +14,7 @@ export class SomeService {
   }
 
   private async init() {
-    await this.storage.create();           // ← only once per app
+    await this.storage.create();
   }
 }
 
